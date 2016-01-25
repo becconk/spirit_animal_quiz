@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title> What's Your Spirit Animal? </title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1> Spirit Animal Quiz </h1>
+
+    <div id="mainContent">
+        <button id="id_startQuiz" onclick="startQuiz()"> Start Quiz</button>
+
+
+        <div id="question1"></div>
+
+
+
+
+
+    </div>
+
+    <script>
+        //init
+        function startQuiz() {
+
+            document.getElementById('mainContent').innerHTML = answerInput1();
+
+
+        };
+        //answers and questions
+
+        function answerInput1() {
+            var content = "";
+            content += ("<h2>1. What is your favorite food?</h2><br/>");
+            content += ("Salad" + checkBox('panda') + "<br/>");
+            content += ("Sushi" + checkBox('salmon') + "<br/>");
+            content += ("Burger" + checkBox('lion') + "<br/>");
+            content += ("Honey" + checkBox('hummingbird') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput2() {
+            var content = "";
+            content += ("<h2> 2.What is your favorite movie genre?</h2><br/>");
+            content += ("Horror" + checkBox('lion') + "<br/>");
+            content += ("Romance" + checkBox('hummingbird') + "<br/>");
+            content += ("Documentary" + checkBox('salmon') + "<br/>");
+            content += ("Action" + checkBox('panda') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput3() {
+            var content = "";
+            content += ("<h2> 3. What clique were you in in high school?</h2><br/>");
+            content += ("Nerds" + checkBox('salmon') + "<br/>");
+            content += ("Jocks" + checkBox('lion') + "<br/>");
+            content += ("Artists" + checkBox('panda') + "<br/>");
+            content += ("Gossipers" + checkBox('hummingbird') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput4() {
+            var content = "";
+            content += ("<h2>4. Favorite activity:</h2><br/>");
+            content += ("Partying" + checkBox('lion') + "<br/>");
+            content += ("Sleeping" + checkBox('panda') + "<br/>");
+            content += ("Reading" + checkBox('salmon') + "<br/>");
+            content += ("Coffee with friends" + checkBox('hummingbird') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput5() {
+            var content = "";
+            content += ("<h2>5. Favorite Drink</h2><br/>");
+            content += ("Red Bull" + checkBox('hummingbird') + "<br/>");
+            content += ("Fiji Water" + checkBox('salmon') + "<br/>");
+            content += ("Coke" + checkBox('lion') + "<br/>");
+            content += ("Tea" + checkBox('panda') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput6() {
+            var content = "";
+            content += ("<h2>6. Who is yout favorite celebrity?</h2><br/>");
+            content += ("Jack Black" + checkBox('panda') + "<br/>");
+            content += ("The Rock" + checkBox('salmon') + "<br/>");
+            content += ("Katy Perry" + checkBox('lion') + "<br/>");
+            content += ("Beyonce" + checkBox('hummingbird') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput7() {
+            var content = "";
+            content += ("<h2>7. Favorite type of art?</h2><br/>");
+            content += ("Statues" + checkBox('salmon') + "<br/>");
+            content += ("Finger Painting" + checkBox('panda') + "<br/>");
+            content += ("Pop Art" + checkBox('hummingbird') + "<br/>");
+            content += ("Post Modernism" + checkBox('lion') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput8() {
+            var content = "";
+            content += ("<h2>8. What is your favorite color?</h2><br/>");
+            content += ("Green" + checkBox('panda') + "<br/>");
+            content += ("Red" + checkBox('lion') + "<br/>");
+            content += ("Pink" + checkBox('salmon') + "<br/>");
+            content += ("Purple" + checkBox('hummingbird') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput9() {
+            var content = "";
+            content += ("<h2>9. What's your favorite type of weather?</h2><br/>");
+            content += ("Rain" + checkBox('salmon') + "<br/>");
+            content += ("Sun" + checkBox('hummingbird') + "<br/>");
+            content += ("Snow" + checkBox('panda') + "<br/>");
+            content += ("Desert" + checkBox('lion') + "<br/>");
+
+
+
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+
+        };
+
+        function answerInput10() {
+            var content = "";
+            content += ("<h2>10. Whats your favorite TV show?</h2><br/>");
+            content += ("The Walking Dead" + checkBox('salmon') + "<br/>");
+            content += ("The Flash" + checkBox('hummingbird') + "<br/>");
+            content += ("Gotham" + checkBox('panda') + "<br/>");
+            content += ("Man vs Food" + checkBox('lion') + "<br/>");
+            return content + "<button id='testing' onclick='checkAnswer()'>Submit</button>";
+        };
+
+
+        var animalResults = {
+            salmon: 0,
+            panda: 0,
+            hummingbird: 0,
+            lion: 0
+        }
+
+        function whichAnimal(salmon, panda, lion, hummingbird) {
+
+            document.getElementById('mainContent').innerHTML = ("You are <br/>" + salmon + "% Salmon, " + panda + "% Panda, " + lion + "% Lion, " + hummingbird + "% Hummingbird ");
+
+        };
+
+        function callback(an1, an2, an3, an4, whichAnimal) {
+            var salmon = ((animalResults.salmon / 10) * 100);
+            var panda = ((animalResults.panda / 10) * 100);
+            var lion = ((animalResults.lion / 10) * 100);
+            var hummingbird = ((animalResults.hummingbird / 10) * 100);
+
+            whichAnimal(salmon, panda, lion, hummingbird);
+        }
+
+
+        var questionCount = -1;
+
+
+        function checkAnswer() {
+            var x = document.getElementById('salmon').checked;
+            var y = document.getElementById('panda').checked;
+            var z = document.getElementById('hummingbird').checked;
+            var w = document.getElementById('lion').checked;
+
+            if (x == true) {
+                animalResults.salmon = animalResults.salmon + 1
+                questionCount = questionCount + 1;
+            }
+            if (y == true) {
+                animalResults.panda = animalResults.panda + 1
+                questionCount = questionCount + 1;
+            }
+            if (z == true) {
+                animalResults.hummingbird = animalResults.hummingbird + 1
+                questionCount = questionCount + 1;
+            }
+            if (w == true) {
+                animalResults.lion = animalResults.lion + 1
+                questionCount = questionCount + 1;
+            }
+            var array = [answerInput2(), answerInput3(), answerInput4(), answerInput5(), answerInput6(), answerInput7(), answerInput8(), answerInput9(), answerInput10()];
+
+            document.getElementById('mainContent').innerHTML = array[questionCount];
+            if (questionCount == 9) {
+                callback('salmon', 'panda', 'lion', 'hummingbird', whichAnimal);
+
+                var newArr = [animalResults.salmon, animalResults.panda, animalResults.lion, animalResults.hummingbird]
+                findNum(newArr, whichAnimal);
+
+
+
+
+            }
+
+
+            console.log(animalResults);
+            console.log(questionCount);
+
+            return animalResults;
+
+        };
+
+        //this lets us grab the key once we have submitted a value
+
+        Object.prototype.getKeyByValue = function (value) {
+            for (var prop in this) {
+                if (this.hasOwnProperty(prop)) {
+                    if (this[prop] === value)
+                        return prop;
+                }
+            }
+        }
+
+        // functions to calculate our top score
+
+
+        function findNum(newArr, callback) {
+            var minimum = newArr[0];
+            for (var i = 0; i < newArr.length; i++) {
+                if (newArr[i] > minimum) {
+                    minimum = newArr[i];
+                }
+            }
+            callback(minimum);
+        };
+
+        function whichAnimal(num) {
+            var winner, animalIMG;
+            winner = animalResults.getKeyByValue(num);
+            if (winner == "panda") {
+                animalIMG = "<br/><img width='300px'; src='http://onehdwallpaper.com/wp-content/uploads/2015/07/Beautiful-Panda-Desktop-Wallpapers.jpg'/>"
+
+                document.getElementById('mainContent').innerHTML = winner + animalIMG;
+            }
+            if (winner == "lion") {
+                animalIMG = "<br/><img width='300px'; src='http://wallpaperhdwide.com/wp-content/gallery/lion-hd-wallpaper/beautiful-wallpaper-of-big-lion-hd-animals-wallpapers.jpg'/>"
+
+                document.getElementById('mainContent').innerHTML = winner + animalIMG;
+            }
+            if (winner == "salmon") {
+                animalIMG = "<br/><img width='300px'; src='http://ahlikolesterol.com/wp-content/uploads/2015/05/salmon.png'/>"
+
+                document.getElementById('mainContent').innerHTML = winner + animalIMG;
+            }
+            if (winner == "hummingbird") {
+                animalIMG = "<br/><img width='300px'; src='http://newtopwallpapers.com/wp-content/uploads/2013/07/Hummingbird-Wallpaper.jpeg'/>"
+
+                document.getElementById('mainContent').innerHTML = winner + animalIMG;
+            }
+
+
+        }
+
+
+
+
+
+        function checkBox(animal) {
+            var a = "<input type ='radio' name ='option' id ='" + animal + "' />"
+            return a;
+        }
+    </script>
+</body>
+
+</html>
